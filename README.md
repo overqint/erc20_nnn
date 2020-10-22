@@ -1,3 +1,3 @@
-# MetaCoin Truffle Box
+# NNN project
 
-MetaCoin example Truffle project
+NNN Token project
