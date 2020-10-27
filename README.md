@@ -1,3 +1,3 @@
-# MetaCoin Truffle Box
+# NNN ERC20
 
-MetaCoin example Truffle project
+NNN Token ERC20
