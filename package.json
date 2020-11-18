@@ -1,0 +1,35 @@
+{
+  "name": "erc20_nnn_token",
+  "version": "1.0.0",
+  "description": "Novem Gold Gold Token erc20 NNN ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@openzeppelin/contracts-ethereum-package": "^3.0.0",
+    "@openzeppelin/truffle-upgrades": "^1.2.3",
+    "@openzeppelin/upgrades": "^2.8.0",
+    "chai": "^4.2.0",
+    "truffle": "^5.1.46",
+    "truffle-assertions": "^0.9.2"
+  },
+  "dependencies": {
+    "@openzeppelin/cli": "^2.8.2",
+    "@truffle/hdwallet-provider": "^1.1.1",
+    "solc": "^0.6.2",
+    "truffle-flattener": "^1.5.0",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "truffle-ledger-provider": "^1.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/overqint/erc20_nnn.git"
+  },
+  "author": "Selim Erunkut",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/overqint/erc20_nnn/issues"
+  },
+  "homepage": "https://github.com/overqint/erc20_nnn#readme"
+}

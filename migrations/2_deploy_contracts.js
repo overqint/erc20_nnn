@@ -1,11 +1,14 @@
-const NNN = artifacts.require("NNNToken");
-//const Roles = artifacts.require("Roles");
-//const WhitelistAdminRole = artifacts.require("WhitelistAdminRole");
-//const WhitelistedRole = artifacts.require("WhitelistedRole");
 
-module.exports = function(deployer) {
-  deployer.deploy(NNN, 200, "0x23d14f765b8B8B0Ca604fF673E84cD6BB286021f");
-  //deployer.deploy(Roles);
-  //deployer.deploy(WhitelistAdminRole);
-  //deployer.deploy(WhitelistedRole);
+const { deployProxy } = require('@openzeppelin/truffle-upgrades');
+
+const NNNToken = artifacts.require('NNNToken');
+
+module.exports = async function (deployer) {
+  const instance = await deployProxy(
+    NNNToken, 
+    ["Novem Gold Token", "NNN"], 
+    { deployer,  initializer: "initialize", unsafeAllowCustomTypes: true }); 
+      //unsafeAllowCustomTypes Ignores struct mapping in AccessControl, which is fine because it's used in a mapping
+      //See: https://solidity.readthedocs.io/en/v0.6.2/miscellaneous.html#mappings-and-dynamic-arrays
+  console.log('Deployed', instance.address);
 };
