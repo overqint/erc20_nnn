@@ -4,7 +4,7 @@ import "@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol";
 import "./EnhancedMinterPauser.sol";
 
 contract NNNToken is Initializable, EnhancedMinterPauser {
-
+    //function __initialize(string memory name, string memory symbol, address feeAddress, uint32 fee)
     function __initialize(string memory name, string memory symbol)
         public
         initializer

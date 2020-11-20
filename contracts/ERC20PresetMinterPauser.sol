@@ -21,7 +21,13 @@ import "@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol";
  * roles, as well as the default admin role, which will let it grant both minter
  * and pauser roles to aother accounts
  */
-contract ERC20PresetMinterPauserUpgradeSafe is Initializable, ContextUpgradeSafe, AccessControlUpgradeSafe, ERC20BurnableUpgradeSafe, ERC20PausableUpgradeSafe {
+contract ERC20PresetMinterPauserUpgradeSafe is
+    Initializable,
+    ContextUpgradeSafe,
+    AccessControlUpgradeSafe,
+    ERC20BurnableUpgradeSafe,
+    ERC20PausableUpgradeSafe
+{
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
 
@@ -36,7 +42,10 @@ contract ERC20PresetMinterPauserUpgradeSafe is Initializable, ContextUpgradeSafe
         __ERC20PresetMinterPauser_init(name, symbol);
     }
 
-    function __ERC20PresetMinterPauser_init(string memory name, string memory symbol) internal initializer {
+    function __ERC20PresetMinterPauser_init(
+        string memory name,
+        string memory symbol
+    ) internal initializer {
         __Context_init_unchained();
         __AccessControl_init_unchained();
         __ERC20_init_unchained(name, symbol);
@@ -46,13 +55,11 @@ contract ERC20PresetMinterPauserUpgradeSafe is Initializable, ContextUpgradeSafe
         __ERC20PresetMinterPauser_init_unchained();
     }
 
-     function __ERC20PresetMinterPauser_init_unchained() internal initializer {
+    function __ERC20PresetMinterPauser_init_unchained() internal initializer {
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
-
         _setupRole(MINTER_ROLE, _msgSender());
         _setupRole(PAUSER_ROLE, _msgSender());
     }
-
 
     /**
      * @dev Creates `amount` new tokens for `to`.
@@ -64,7 +71,10 @@ contract ERC20PresetMinterPauserUpgradeSafe is Initializable, ContextUpgradeSafe
      * - the caller must have the `MINTER_ROLE`.
      */
     function mint(address to, uint256 amount) public {
-        require(hasRole(MINTER_ROLE, _msgSender()), "ERC20PresetMinterPauser: must have minter role to mint");
+        require(
+            hasRole(MINTER_ROLE, _msgSender()),
+            "ERC20PresetMinterPauser: must have minter role to mint"
+        );
         _mint(to, amount);
     }
 
@@ -78,7 +88,10 @@ contract ERC20PresetMinterPauserUpgradeSafe is Initializable, ContextUpgradeSafe
      * - the caller must have the `PAUSER_ROLE`.
      */
     function pause() public {
-        require(hasRole(PAUSER_ROLE, _msgSender()), "ERC20PresetMinterPauser: must have pauser role to pause");
+        require(
+            hasRole(PAUSER_ROLE, _msgSender()),
+            "ERC20PresetMinterPauser: must have pauser role to pause"
+        );
         _pause();
     }
 
@@ -92,11 +105,18 @@ contract ERC20PresetMinterPauserUpgradeSafe is Initializable, ContextUpgradeSafe
      * - the caller must have the `PAUSER_ROLE`.
      */
     function unpause() public {
-        require(hasRole(PAUSER_ROLE, _msgSender()), "ERC20PresetMinterPauser: must have pauser role to unpause");
+        require(
+            hasRole(PAUSER_ROLE, _msgSender()),
+            "ERC20PresetMinterPauser: must have pauser role to unpause"
+        );
         _unpause();
     }
 
-    function _beforeTokenTransfer(address from, address to, uint256 amount) internal override(ERC20UpgradeSafe, ERC20PausableUpgradeSafe) {
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256 amount
+    ) internal override(ERC20UpgradeSafe, ERC20PausableUpgradeSafe) {
         super._beforeTokenTransfer(from, to, amount);
     }
 

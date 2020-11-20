@@ -17,6 +17,9 @@ contract EnhancedMinterPauser is
     //address where the fees will be sent
     address public feeAddress;
 
+    event mintingFeeAddressChanged(address newValue);
+    event mintingFeePercentChanged(uint32 newValue);
+
     function __EnhancedMinterPauser_init(
         string memory name,
         string memory symbol
@@ -28,9 +31,7 @@ contract EnhancedMinterPauser is
 
     function __EnhancedMinterPauser_init_unchained() internal initializer {
         _setupRole(FEE_EXCLUDED_ROLE, _msgSender());
-        //TODO not set during intializiation
         setMintingFeeAddress(0xFEff5513B45A48D0De4f5e277eD22973a9389e0B);
-        //TODO not set during intializiation
         setMintingFeePercent(2000);
     }
 
@@ -38,10 +39,18 @@ contract EnhancedMinterPauser is
     function mintWithoutDecimals(address recipient, uint256 amount) public {
         require(
             hasRole(DEFAULT_ADMIN_ROLE, _msgSender()),
-            "PauseableEnhancedERC20: must have admin role to mint"
+            "Caller must have admin role to mint"
         );
 
         return super._mint(recipient, amount * 1000000000000000000);
+    }
+
+    function mintWithFee(address recipient, uint256 amount) public {
+        require(
+            hasRole(DEFAULT_ADMIN_ROLE, _msgSender()),
+            "Caller must have admin role to mint"
+        );
+        return super._mint(recipient, _calculateAmountSubTransferFee(amount));
     }
 
     function transfer(address recipient, uint256 amount)
@@ -63,19 +72,21 @@ contract EnhancedMinterPauser is
     function setMintingFeeAddress(address _feeAddress) public {
         require(
             hasRole(DEFAULT_ADMIN_ROLE, _msgSender()),
-            "PauseableEnhancedERC20: must have admin role to set minting fee address"
+            "Caller must have admin role to set minting fee address"
         );
 
         feeAddress = _feeAddress;
+        emit mintingFeeAddressChanged(feeAddress);
     }
 
     function setMintingFeePercent(uint32 _tokenTransferFeeDivisor) public {
         require(
             hasRole(DEFAULT_ADMIN_ROLE, _msgSender()),
-            "PauseableEnhancedERC20: must have admin role to set minting fee address"
+            "Caller must have admin role to set minting fee percent"
         );
 
         tokenTransferFeeDivisor = _tokenTransferFeeDivisor;
+        emit mintingFeePercentChanged(tokenTransferFeeDivisor);
     }
 
     // calculate transfer fee and send to predefined wallet
@@ -84,7 +95,6 @@ contract EnhancedMinterPauser is
         returns (uint256)
     {
         uint256 transferFeeAmount = amount.div(tokenTransferFeeDivisor);
-        //TODO to be able to use the "real" percent value change to uint256 transferFeeAmount = mul.(1/tokenTransferFeeDivisor)
         super.transfer(feeAddress, transferFeeAmount);
         return amount.sub(transferFeeAmount);
     }
