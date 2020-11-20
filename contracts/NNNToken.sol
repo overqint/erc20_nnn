@@ -1,22 +1,16 @@
 pragma solidity 0.6.2;
 
 import "@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol";
-import "@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol";
-import "./ManagedEnhancedERC20.sol";
+import "./EnhancedMinterPauser.sol";
 
-contract NNNToken is Initializable, ManagedEnhancedERC20 {
-    using SafeMath for uint256;
+contract NNNToken is Initializable, EnhancedMinterPauser {
 
-    function initialize(string memory name, string memory symbol)
+    function __initialize(string memory name, string memory symbol)
         public
         initializer
     {
-        __Context_init_unchained();
-        __AccessControl_init_unchained();
         __ERC20_init_unchained(name, symbol);
-        __Pausable_init_unchained();
-        __ManagedEnhancedERC20_init_unchained();
+        __ERC20PresetMinterPauser_init_unchained();
+        __EnhancedMinterPauser_init_unchained();
     }
-
-
 }

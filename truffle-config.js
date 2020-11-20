@@ -1,3 +1,6 @@
+const web3 = require('web3');
+
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -49,11 +52,25 @@ module.exports = {
      gas: 6000000,
      gasPrice: 10,
     },
+    /*     
     test: {
       host: "127.0.0.1",     // Localhost (default: none)
       port: 7545,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
-     },
+     }, 
+     */
+     test: {
+      provider: function () {
+        return new HDWalletProvider({
+          privateKeys: TEST_PRIVATE_KEYS,
+          //mnemonic = "there large number cabin key actual army scare grid brass ritual ugly", 
+          providerOrUrl: "http://127.0.0.1:8545",
+          addressIndex: 0,
+          numberOfAddresses: 1
+        })},
+      network_id: 2017,
+      skipDryRun:false
+    },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
