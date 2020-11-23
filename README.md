@@ -1,4 +1,4 @@
-# NNN project
+# NNN Gold Token
 
-NNN Token project
+NNN Gold Token on Ethereum
 
