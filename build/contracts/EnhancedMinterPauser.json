@@ -6916,8 +6916,8 @@
     "version": "0.6.2+commit.bacdbe57.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.3.1",
-  "updatedAt": "2020-11-20T19:17:07.403Z",
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2020-11-24T19:57:26.352Z",
   "devdoc": {
     "details": "ERC20 token with minting, burning and pausable token transfers. ",
     "methods": {
