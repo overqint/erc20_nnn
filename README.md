@@ -1,4 +1,4 @@
-# NNN Token project
+# NNN Gold Token 
 
 Upgradable ERC20 Contract
 
