@@ -1,7 +1,8 @@
-pragma solidity 0.6.2;
+pragma solidity ^0.7.0;
 
-import "./ERC20PresetMinterPauser.sol";
-import "@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol";
+//import "./ERC20PresetMinterPauser.sol";
+import "../node_modules/@openzeppelin/contracts-upgradeable/presets/ERC20PresetMinterPauserUpgradeable.sol";
+import "../node_modules/@openzeppelin/contracts-upgradeable/math/SafeMathUpgradeable.sol";
 
 /**
  * @dev ERC20 token with minting, burning and pausable token transfers.
@@ -9,8 +10,11 @@ import "@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol";
  */
 contract EnhancedMinterPauser is
     Initializable,
-    ERC20PresetMinterPauserUpgradeSafe
+    ERC20PresetMinterPauserUpgradeable
 {
+    using SafeMathUpgradeable for uint256;
+
+    //role for excluding addresses for feeless transfer
     bytes32 public constant FEE_EXCLUDED_ROLE = keccak256("FEE_EXCLUDED_ROLE");
 
     uint32 public tokenTransferFeeDivisor;
@@ -25,14 +29,14 @@ contract EnhancedMinterPauser is
         string memory symbol
     ) internal initializer {
         __ERC20_init_unchained(name, symbol);
-        __ERC20PresetMinterPauser_init_unchained();
+        __ERC20PresetMinterPauser_init_unchained(name, symbol);
         __EnhancedMinterPauser_init_unchained();
     }
 
     function __EnhancedMinterPauser_init_unchained() internal initializer {
         _setupRole(FEE_EXCLUDED_ROLE, _msgSender());
         setMintingFeeAddress(0xFEff5513B45A48D0De4f5e277eD22973a9389e0B);
-        setMintingFeePercent(2000);
+        setTransferFeeDivisor(2000);
     }
 
     // minting process does not involve fees (by design)
@@ -79,7 +83,7 @@ contract EnhancedMinterPauser is
         emit mintingFeeAddressChanged(feeAddress);
     }
 
-    function setMintingFeePercent(uint32 _tokenTransferFeeDivisor) public {
+    function setTransferFeeDivisor(uint32 _tokenTransferFeeDivisor) public {
         require(
             hasRole(DEFAULT_ADMIN_ROLE, _msgSender()),
             "Caller must have admin role to set minting fee percent"
@@ -94,9 +98,9 @@ contract EnhancedMinterPauser is
         private
         returns (uint256)
     {
-        uint256 transferFeeAmount = amount.div(tokenTransferFeeDivisor);
-        super.transfer(feeAddress, transferFeeAmount);
-        return amount.sub(transferFeeAmount);
+        //using SafeMath for uint256 transferFeeAmount = amount.div(tokenTransferFeeDivisor);
+        super.transfer(feeAddress, amount.div(tokenTransferFeeDivisor));
+        return amount.sub(amount.div(tokenTransferFeeDivisor));
     }
 
     uint256[50] private __gap;
