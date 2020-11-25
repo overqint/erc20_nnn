@@ -1,6 +1,13 @@
 const web3 = require('web3');
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
+
+const { INFURA_PROJECT_ID,
+  TEST_PRIVATE_KEYS,
+  MAINNET_PRIVATE_KEYS,
+  RINKEBY_PRIVATE_KEYS,
+  ROPSTEN_PRIVATE_KEYS,
+  KOVAN_PRIVATE_KEYS } = require('./.secrets.json');
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -46,11 +53,11 @@ module.exports = {
     // options below to some value.
     //
     development: {
-     host: "127.0.0.1",     // Localhost (default: none)
-     port: 7545,            // Standard Ethereum port (default: none)
-     network_id: "*",       // Any network (default: none)
-     gas: 6000000,
-     gasPrice: 10,
+      host: "127.0.0.1",     // Localhost (default: none)
+      port: 7545,            // Standard Ethereum port (default: none)
+      network_id: "*",       // Any network (default: none)
+      gas: 6000000,
+      gasPrice: 10,
     },
     /*     
     test: {
@@ -59,7 +66,7 @@ module.exports = {
       network_id: "*",       // Any network (default: none)
      }, 
      */
-     test: {
+    test: {
       provider: function () {
         return new HDWalletProvider({
           privateKeys: TEST_PRIVATE_KEYS,
@@ -67,10 +74,53 @@ module.exports = {
           providerOrUrl: "http://127.0.0.1:8545",
           addressIndex: 0,
           numberOfAddresses: 1
-        })},
+        })
+      },
       network_id: 2017,
+      skipDryRun: false
+    },
+    ropsten: {
+      provider: function () {
+        return new HDWalletProvider({
+          privateKeys: ROPSTEN_PRIVATE_KEYS,
+          providerOrUrl: "https://ropsten.infura.io/v3/" + INFURA_PROJECT_ID,
+          numberOfAddresses: 1,
+          derivationPath: "m/44'/60'/0'/0"
+        })
+      },
+      network_id: 3,       // Ropsten's id
+      gas: 5500000,        // Ropsten has a lower block limit than mainnet
+      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: false     // Skip dry run before migrations? (default: false for public net
+    },
+    kovan: {
+      provider: function () {
+        return new HDWalletProvider({
+          privateKeys: KOVAN_PRIVATE_KEYS,
+          providerOrUrl: "https://kovan.infura.io/v3/" + INFURA_PROJECT_ID,
+          addressIndex: 0,
+          numberOfAddresses: 3,
+          networkCheckTimeout: 10000
+          //derivationPath: "m/44'/60'/0'/0"
+        })
+      },
+      network_id: 42,
+      skipDryRun: false
+    },
+    rinkeby: {
+      provider: function () {
+      return new HDWalletProvider({
+          privateKeys: RINKEBY_PRIVATE_KEYS, 
+          providerOrUrl: "https://rinkeby.infura.io/v3/" + INFURA_PROJECT_ID,
+          numberOfAddresses: 3,
+          derivationPath: "m/44'/60'/0'/0"
+        })},
+      network_id: 4,
+      networkCheckTimeout: 10000,
       skipDryRun:false
     },
+
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
@@ -106,8 +156,8 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-       version: "0.6.2",    // Fetch exact version from solc-bin (default: truffle's version)
-       settings: {          // See the solidity docs for advice about optimization and evmVersion
+      version: "0.7.0",    // Fetch exact version from solc-bin (default: truffle's version)
+      settings: {          // See the solidity docs for advice about optimization and evmVersion
         optimizer: {
           enabled: true,
           runs: 1337

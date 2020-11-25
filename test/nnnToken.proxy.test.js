@@ -1,4 +1,3 @@
-// test/Box.proxy.test.js
 // Load dependencies
 const { expect } = require('chai');
 const { deployProxy } = require('@openzeppelin/truffle-upgrades');
@@ -16,7 +15,7 @@ contract('NNNToken (proxy)', async accounts => {
     console.log('Deployed', this.nnnToken.address);
   });
 
-  it("token name should be "+constants._t_c.TOKEN_NAME, async function () {
+  it("token name should be " + constants._t_c.TOKEN_NAME, async function () {
     expect((await this.nnnToken.name()).toString()).to.equal(constants._t_c.TOKEN_NAME);
   });
 
@@ -59,7 +58,7 @@ contract('NNNToken (proxy)', async accounts => {
 
   it("sets minting fee address", async function () {
     let newFee = 1000
-    this.nnnToken.setMintingFeePercent(1000);
+    this.nnnToken.setTransferFeeDivisor(1000);
     assert.equal((await this.nnnToken.tokenTransferFeeDivisor()).toString(), newFee);
   });
 });
