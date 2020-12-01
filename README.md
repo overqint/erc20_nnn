@@ -10,4 +10,10 @@ Using OpenZeppelin contracts.
 ### Error: PollingBlockTracker - encountered an error while attempting to update latest block:
 Error: ESOCKETTIMEDOUT
 
-add networkCheckTimeout: 10000 to truffle-config.js
+add 
+```
+networkCheckTimeout: 10000
+```
+to truffle-config.js
+
+More information here: https://github.com/trufflesuite/truffle/issues/3356
