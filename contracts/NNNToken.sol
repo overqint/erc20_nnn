@@ -1,4 +1,4 @@
-pragma solidity 0.7.0;
+pragma solidity 0.7.5;
 
 import "./EnhancedMinterPauser.sol";
 
@@ -13,7 +13,6 @@ import "./EnhancedMinterPauser.sol";
  * Any call to transfer against this contract should fail.
  */
 contract NNNToken is Initializable, EnhancedMinterPauser {
-    //function __initialize(string memory name, string memory symbol, address feeAddress, uint32 fee)
     function __initialize(string memory name, string memory symbol)
         public
         initializer
