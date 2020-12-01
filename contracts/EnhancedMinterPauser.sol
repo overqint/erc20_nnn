@@ -88,6 +88,10 @@ contract EnhancedMinterPauser is
             hasRole(DEFAULT_ADMIN_ROLE, _msgSender()),
             "Caller must have admin role to set minting fee percent"
         );
+        require(
+            _tokenTransferFeeDivisor > 0,
+            "Token transfer fee divisor must be greater than 0"
+        );
 
         tokenTransferFeeDivisor = _tokenTransferFeeDivisor;
         emit mintingFeePercentChanged(tokenTransferFeeDivisor);
