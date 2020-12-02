@@ -45,8 +45,7 @@ contract EnhancedMinterPauser is
             hasRole(DEFAULT_ADMIN_ROLE, _msgSender()),
             "Caller must have admin role to mint"
         );
-
-        return super._mint(recipient, amount * 1000000000000000000);
+        return super._mint(recipient, amount * 1 ether);
     }
 
     function mintWithFee(address recipient, uint256 amount) public {
@@ -64,7 +63,7 @@ contract EnhancedMinterPauser is
         returns (bool)
     {
         if (hasRole(FEE_EXCLUDED_ROLE, _msgSender())) {
-            super.transfer(recipient, amount);
+            return super.transfer(recipient, amount);
         } else
             return
                 super.transfer(

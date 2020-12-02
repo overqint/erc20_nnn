@@ -37,7 +37,7 @@ contract('NNNToken (proxy)', async accounts => {
 
   it("token transfer fee should be greater than 0", async function () {
     let tokenTransferFeeDivisor = await this.nnnToken.tokenTransferFeeDivisor();
-    expect(tokenTransferFeeDivisor.toString()).to.be.greaterThan(0)
+    expect(Number(tokenTransferFeeDivisor.toString())).to.be.greaterThan(0)
   });
 
   it("token transfer address should be " + my_constants._t_c.FEE_COLLECTOR_ADDRESS, async function () {
@@ -80,7 +80,7 @@ contract('NNNToken (proxy)', async accounts => {
     assert.equal((await this.nnnToken.tokenTransferFeeDivisor()).toString(), newFee);
   });
 
-  it.only("sets minting fee divisor to 0 and throws exception", async function () {    
+  it("sets minting fee divisor to 0 and throws exception", async function () {    
     await expectRevert(
       this.nnnToken.setTransferFeeDivisor(0),
       'Token transfer fee divisor must be greater than 0',
