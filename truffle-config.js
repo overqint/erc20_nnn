@@ -110,15 +110,29 @@ module.exports = {
     },
     rinkeby: {
       provider: function () {
-      return new HDWalletProvider({
-          privateKeys: RINKEBY_PRIVATE_KEYS, 
+        return new HDWalletProvider({
+          privateKeys: RINKEBY_PRIVATE_KEYS,
           providerOrUrl: "https://rinkeby.infura.io/v3/" + INFURA_PROJECT_ID,
           numberOfAddresses: 3,
           derivationPath: "m/44'/60'/0'/0"
-        })},
+        })
+      },
       network_id: 4,
       networkCheckTimeout: 10000,
-      skipDryRun:false
+      skipDryRun: false
+    },
+    mainnet: {
+      provider: function () {
+        return new HDWalletProvider({
+          privateKeys: MAINNET_PRIVATE_KEYS,
+          providerOrUrl: "https://mainnet.infura.io/v3/" + INFURA_PROJECT_ID,
+          numberOfAddresses: 1,
+          derivationPath: "m/44'/60'/0'/0"
+        })
+      },
+      network_id: 1,
+      gasPrice: web3.utils.toWei("20", "gwei"),
+      skipDryRun: false
     },
 
     // Another network with more advanced options...

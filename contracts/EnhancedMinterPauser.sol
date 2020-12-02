@@ -1,6 +1,6 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.7.5;
 
-//import "./ERC20PresetMinterPauser.sol";
 import "../node_modules/@openzeppelin/contracts-upgradeable/presets/ERC20PresetMinterPauserUpgradeable.sol";
 import "../node_modules/@openzeppelin/contracts-upgradeable/math/SafeMathUpgradeable.sol";
 
