@@ -7119,7 +7119,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.2",
-  "updatedAt": "2020-12-02T21:36:11.237Z",
+  "updatedAt": "2020-12-02T23:58:51.102Z",
   "devdoc": {
     "details": "ERC20 token with minting, burning and pausable token transfers.",
     "kind": "dev",
