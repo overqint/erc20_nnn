@@ -13,11 +13,9 @@ import "./EnhancedMinterPauser.sol";
  * Any call to transfer against this contract should fail.
  */
 contract NNNToken is Initializable, EnhancedMinterPauser {
-    //setting the inherited initilize function as internal to not expose it
-    function initilize() internal initializer {}
-
-    function __initialize(string memory name, string memory symbol)
+    function initialize(string memory name, string memory symbol)
         public
+        override
         initializer
     {
         __ERC20_init_unchained(name, symbol);

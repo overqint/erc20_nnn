@@ -9,7 +9,7 @@ contract('NNNToken (proxy)', async accounts => {
     this.nnnToken = await deployProxy(
       constants._t_c.NNNToken,
       [constants._t_c.TOKEN_NAME, constants._t_c.TOKEN_SYMBOL],
-      { initializer: "__initialize", unsafeAllowCustomTypes: true });
+      { initializer: "initialize", unsafeAllowCustomTypes: true });
     console.log('Deployed', this.nnnToken.address);
     this.nnnToken.setMintingFeeAddress(accounts[1]);
     this.nnnToken.setTransferFeeDivisor(2000);

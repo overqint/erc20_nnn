@@ -787,43 +787,43 @@
     "absolutePath": "/Users/selimerunkut/dev_novem/erc20_nnn_token/contracts/EnhancedMinterPauser.sol",
     "exportedSymbols": {
       "AccessControlUpgradeable": [
-        653
+        648
       ],
       "AddressUpgradeable": [
-        2112
+        2107
       ],
       "ContextUpgradeable": [
-        345
+        340
       ],
       "ERC20BurnableUpgradeable": [
-        1195
+        1190
       ],
       "ERC20PausableUpgradeable": [
-        1260
+        1255
       ],
       "ERC20PresetMinterPauserUpgradeable": [
-        1040
+        1035
       ],
       "ERC20Upgradeable": [
-        1790
+        1785
       ],
       "EnhancedMinterPauser": [
         229
       ],
       "EnumerableSetUpgradeable": [
-        2592
+        2587
       ],
       "IERC20Upgradeable": [
-        1868
+        1863
       ],
       "Initializable": [
-        1111
+        1106
       ],
       "PausableUpgradeable": [
-        2703
+        2698
       ],
       "SafeMathUpgradeable": [
-        849
+        844
       ]
     },
     "id": 230,
@@ -847,7 +847,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 230,
-        "sourceUnit": 1041,
+        "sourceUnit": 1036,
         "src": "57:108:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -858,7 +858,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 230,
-        "sourceUnit": 850,
+        "sourceUnit": 845,
         "src": "166:90:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -871,10 +871,10 @@
               "id": 5,
               "name": "Initializable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1111,
+              "referencedDeclaration": 1106,
               "src": "378:13:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Initializable_$1111",
+                "typeIdentifier": "t_contract$_Initializable_$1106",
                 "typeString": "contract Initializable"
               }
             },
@@ -887,10 +887,10 @@
               "id": 7,
               "name": "ERC20PresetMinterPauserUpgradeable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1040,
+              "referencedDeclaration": 1035,
               "src": "397:34:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20PresetMinterPauserUpgradeable_$1040",
+                "typeIdentifier": "t_contract$_ERC20PresetMinterPauserUpgradeable_$1035",
                 "typeString": "contract ERC20PresetMinterPauserUpgradeable"
               }
             },
@@ -900,15 +900,15 @@
           }
         ],
         "contractDependencies": [
-          345,
-          653,
-          1040,
-          1111,
-          1195,
-          1260,
-          1790,
-          1868,
-          2703
+          340,
+          648,
+          1035,
+          1106,
+          1190,
+          1255,
+          1785,
+          1863,
+          2698
         ],
         "contractKind": "contract",
         "documentation": {
@@ -921,15 +921,15 @@
         "id": 229,
         "linearizedBaseContracts": [
           229,
-          1040,
-          1260,
-          2703,
-          1195,
-          1790,
-          1868,
-          653,
-          345,
-          1111
+          1035,
+          1255,
+          2698,
+          1190,
+          1785,
+          1863,
+          648,
+          340,
+          1106
         ],
         "name": "EnhancedMinterPauser",
         "nodeType": "ContractDefinition",
@@ -940,10 +940,10 @@
               "id": 9,
               "name": "SafeMathUpgradeable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 849,
+              "referencedDeclaration": 844,
               "src": "444:19:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMathUpgradeable_$849",
+                "typeIdentifier": "t_contract$_SafeMathUpgradeable_$844",
                 "typeString": "library SafeMathUpgradeable"
               }
             },
@@ -1226,7 +1226,7 @@
                       "name": "__ERC20_init_unchained",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1335,
+                      "referencedDeclaration": 1330,
                       "src": "976:22:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
@@ -1295,7 +1295,7 @@
                       "name": "__ERC20PresetMinterPauser_init_unchained",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 957,
+                      "referencedDeclaration": 952,
                       "src": "1022:40:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
@@ -1369,7 +1369,7 @@
                   "name": "initializer",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1088,
+                  "referencedDeclaration": 1083,
                   "src": "954:11:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1482,7 +1482,7 @@
                           "name": "_msgSender",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 329,
+                          "referencedDeclaration": 324,
                           "src": "1248:10:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
@@ -1520,7 +1520,7 @@
                       "name": "_setupRole",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 575,
+                      "referencedDeclaration": 570,
                       "src": "1218:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$_t_address_$returns$__$",
@@ -1559,7 +1559,7 @@
                   "name": "initializer",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1088,
+                  "referencedDeclaration": 1083,
                   "src": "1196:11:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1606,7 +1606,7 @@
                             "name": "DEFAULT_ADMIN_ROLE",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 392,
+                            "referencedDeclaration": 387,
                             "src": "1558:18:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
@@ -1621,7 +1621,7 @@
                               "name": "_msgSender",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 329,
+                              "referencedDeclaration": 324,
                               "src": "1578:10:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
@@ -1659,7 +1659,7 @@
                           "name": "hasRole",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 438,
+                          "referencedDeclaration": 433,
                           "src": "1550:7:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_bytes32_$_t_address_$returns$_t_bool_$",
@@ -1835,7 +1835,7 @@
                       "lValueRequested": false,
                       "memberName": "_mint",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1662,
+                      "referencedDeclaration": 1657,
                       "src": "1669:11:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -1959,7 +1959,7 @@
                             "name": "DEFAULT_ADMIN_ROLE",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 392,
+                            "referencedDeclaration": 387,
                             "src": "1824:18:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
@@ -1974,7 +1974,7 @@
                               "name": "_msgSender",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 329,
+                              "referencedDeclaration": 324,
                               "src": "1844:10:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
@@ -2012,7 +2012,7 @@
                           "name": "hasRole",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 438,
+                          "referencedDeclaration": 433,
                           "src": "1816:7:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_bytes32_$_t_address_$returns$_t_bool_$",
@@ -2189,7 +2189,7 @@
                       "lValueRequested": false,
                       "memberName": "_mint",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1662,
+                      "referencedDeclaration": 1657,
                       "src": "1935:11:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -2299,7 +2299,7 @@
           },
           {
             "baseFunctions": [
-              1407
+              1402
             ],
             "body": {
               "id": 144,
@@ -2329,7 +2329,7 @@
                           "name": "_msgSender",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 329,
+                          "referencedDeclaration": 324,
                           "src": "2179:10:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
@@ -2367,7 +2367,7 @@
                       "name": "hasRole",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 438,
+                      "referencedDeclaration": 433,
                       "src": "2152:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_bytes32_$_t_address_$returns$_t_bool_$",
@@ -2483,7 +2483,7 @@
                         "lValueRequested": false,
                         "memberName": "transfer",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1407,
+                        "referencedDeclaration": 1402,
                         "src": "2300:14:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -2576,7 +2576,7 @@
                             "lValueRequested": false,
                             "memberName": "transfer",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 1407,
+                            "referencedDeclaration": 1402,
                             "src": "2215:14:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -2736,7 +2736,7 @@
                             "name": "DEFAULT_ADMIN_ROLE",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 392,
+                            "referencedDeclaration": 387,
                             "src": "2533:18:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
@@ -2751,7 +2751,7 @@
                               "name": "_msgSender",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 329,
+                              "referencedDeclaration": 324,
                               "src": "2553:10:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
@@ -2789,7 +2789,7 @@
                           "name": "hasRole",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 438,
+                          "referencedDeclaration": 433,
                           "src": "2525:7:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_bytes32_$_t_address_$returns$_t_bool_$",
@@ -3039,7 +3039,7 @@
                             "name": "DEFAULT_ADMIN_ROLE",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 392,
+                            "referencedDeclaration": 387,
                             "src": "2855:18:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
@@ -3054,7 +3054,7 @@
                               "name": "_msgSender",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 329,
+                              "referencedDeclaration": 324,
                               "src": "2875:10:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
@@ -3092,7 +3092,7 @@
                           "name": "hasRole",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 438,
+                          "referencedDeclaration": 433,
                           "src": "2847:7:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_bytes32_$_t_address_$returns$_t_bool_$",
@@ -3497,7 +3497,7 @@
                           "lValueRequested": false,
                           "memberName": "div",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 779,
+                          "referencedDeclaration": 774,
                           "src": "3533:10:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -3550,7 +3550,7 @@
                       "lValueRequested": false,
                       "memberName": "transfer",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1407,
+                      "referencedDeclaration": 1402,
                       "src": "3506:14:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -3620,7 +3620,7 @@
                           "lValueRequested": false,
                           "memberName": "div",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 779,
+                          "referencedDeclaration": 774,
                           "src": "3597:10:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -3669,7 +3669,7 @@
                       "lValueRequested": false,
                       "memberName": "sub",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 699,
+                      "referencedDeclaration": 694,
                       "src": "3586:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -3838,43 +3838,43 @@
     "absolutePath": "/Users/selimerunkut/dev_novem/erc20_nnn_token/contracts/EnhancedMinterPauser.sol",
     "exportedSymbols": {
       "AccessControlUpgradeable": [
-        653
+        648
       ],
       "AddressUpgradeable": [
-        2112
+        2107
       ],
       "ContextUpgradeable": [
-        345
+        340
       ],
       "ERC20BurnableUpgradeable": [
-        1195
+        1190
       ],
       "ERC20PausableUpgradeable": [
-        1260
+        1255
       ],
       "ERC20PresetMinterPauserUpgradeable": [
-        1040
+        1035
       ],
       "ERC20Upgradeable": [
-        1790
+        1785
       ],
       "EnhancedMinterPauser": [
         229
       ],
       "EnumerableSetUpgradeable": [
-        2592
+        2587
       ],
       "IERC20Upgradeable": [
-        1868
+        1863
       ],
       "Initializable": [
-        1111
+        1106
       ],
       "PausableUpgradeable": [
-        2703
+        2698
       ],
       "SafeMathUpgradeable": [
-        849
+        844
       ]
     },
     "id": 230,
@@ -3898,7 +3898,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 230,
-        "sourceUnit": 1041,
+        "sourceUnit": 1036,
         "src": "57:108:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -3909,7 +3909,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 230,
-        "sourceUnit": 850,
+        "sourceUnit": 845,
         "src": "166:90:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -3922,10 +3922,10 @@
               "id": 5,
               "name": "Initializable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1111,
+              "referencedDeclaration": 1106,
               "src": "378:13:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Initializable_$1111",
+                "typeIdentifier": "t_contract$_Initializable_$1106",
                 "typeString": "contract Initializable"
               }
             },
@@ -3938,10 +3938,10 @@
               "id": 7,
               "name": "ERC20PresetMinterPauserUpgradeable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1040,
+              "referencedDeclaration": 1035,
               "src": "397:34:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20PresetMinterPauserUpgradeable_$1040",
+                "typeIdentifier": "t_contract$_ERC20PresetMinterPauserUpgradeable_$1035",
                 "typeString": "contract ERC20PresetMinterPauserUpgradeable"
               }
             },
@@ -3951,15 +3951,15 @@
           }
         ],
         "contractDependencies": [
-          345,
-          653,
-          1040,
-          1111,
-          1195,
-          1260,
-          1790,
-          1868,
-          2703
+          340,
+          648,
+          1035,
+          1106,
+          1190,
+          1255,
+          1785,
+          1863,
+          2698
         ],
         "contractKind": "contract",
         "documentation": {
@@ -3972,15 +3972,15 @@
         "id": 229,
         "linearizedBaseContracts": [
           229,
-          1040,
-          1260,
-          2703,
-          1195,
-          1790,
-          1868,
-          653,
-          345,
-          1111
+          1035,
+          1255,
+          2698,
+          1190,
+          1785,
+          1863,
+          648,
+          340,
+          1106
         ],
         "name": "EnhancedMinterPauser",
         "nodeType": "ContractDefinition",
@@ -3991,10 +3991,10 @@
               "id": 9,
               "name": "SafeMathUpgradeable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 849,
+              "referencedDeclaration": 844,
               "src": "444:19:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMathUpgradeable_$849",
+                "typeIdentifier": "t_contract$_SafeMathUpgradeable_$844",
                 "typeString": "library SafeMathUpgradeable"
               }
             },
@@ -4277,7 +4277,7 @@
                       "name": "__ERC20_init_unchained",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1335,
+                      "referencedDeclaration": 1330,
                       "src": "976:22:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
@@ -4346,7 +4346,7 @@
                       "name": "__ERC20PresetMinterPauser_init_unchained",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 957,
+                      "referencedDeclaration": 952,
                       "src": "1022:40:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
@@ -4420,7 +4420,7 @@
                   "name": "initializer",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1088,
+                  "referencedDeclaration": 1083,
                   "src": "954:11:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -4533,7 +4533,7 @@
                           "name": "_msgSender",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 329,
+                          "referencedDeclaration": 324,
                           "src": "1248:10:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
@@ -4571,7 +4571,7 @@
                       "name": "_setupRole",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 575,
+                      "referencedDeclaration": 570,
                       "src": "1218:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$_t_address_$returns$__$",
@@ -4610,7 +4610,7 @@
                   "name": "initializer",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1088,
+                  "referencedDeclaration": 1083,
                   "src": "1196:11:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -4657,7 +4657,7 @@
                             "name": "DEFAULT_ADMIN_ROLE",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 392,
+                            "referencedDeclaration": 387,
                             "src": "1558:18:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
@@ -4672,7 +4672,7 @@
                               "name": "_msgSender",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 329,
+                              "referencedDeclaration": 324,
                               "src": "1578:10:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
@@ -4710,7 +4710,7 @@
                           "name": "hasRole",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 438,
+                          "referencedDeclaration": 433,
                           "src": "1550:7:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_bytes32_$_t_address_$returns$_t_bool_$",
@@ -4886,7 +4886,7 @@
                       "lValueRequested": false,
                       "memberName": "_mint",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1662,
+                      "referencedDeclaration": 1657,
                       "src": "1669:11:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -5010,7 +5010,7 @@
                             "name": "DEFAULT_ADMIN_ROLE",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 392,
+                            "referencedDeclaration": 387,
                             "src": "1824:18:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
@@ -5025,7 +5025,7 @@
                               "name": "_msgSender",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 329,
+                              "referencedDeclaration": 324,
                               "src": "1844:10:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
@@ -5063,7 +5063,7 @@
                           "name": "hasRole",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 438,
+                          "referencedDeclaration": 433,
                           "src": "1816:7:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_bytes32_$_t_address_$returns$_t_bool_$",
@@ -5240,7 +5240,7 @@
                       "lValueRequested": false,
                       "memberName": "_mint",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1662,
+                      "referencedDeclaration": 1657,
                       "src": "1935:11:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -5350,7 +5350,7 @@
           },
           {
             "baseFunctions": [
-              1407
+              1402
             ],
             "body": {
               "id": 144,
@@ -5380,7 +5380,7 @@
                           "name": "_msgSender",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 329,
+                          "referencedDeclaration": 324,
                           "src": "2179:10:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
@@ -5418,7 +5418,7 @@
                       "name": "hasRole",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 438,
+                      "referencedDeclaration": 433,
                       "src": "2152:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_bytes32_$_t_address_$returns$_t_bool_$",
@@ -5534,7 +5534,7 @@
                         "lValueRequested": false,
                         "memberName": "transfer",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1407,
+                        "referencedDeclaration": 1402,
                         "src": "2300:14:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -5627,7 +5627,7 @@
                             "lValueRequested": false,
                             "memberName": "transfer",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 1407,
+                            "referencedDeclaration": 1402,
                             "src": "2215:14:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -5787,7 +5787,7 @@
                             "name": "DEFAULT_ADMIN_ROLE",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 392,
+                            "referencedDeclaration": 387,
                             "src": "2533:18:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
@@ -5802,7 +5802,7 @@
                               "name": "_msgSender",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 329,
+                              "referencedDeclaration": 324,
                               "src": "2553:10:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
@@ -5840,7 +5840,7 @@
                           "name": "hasRole",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 438,
+                          "referencedDeclaration": 433,
                           "src": "2525:7:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_bytes32_$_t_address_$returns$_t_bool_$",
@@ -6090,7 +6090,7 @@
                             "name": "DEFAULT_ADMIN_ROLE",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 392,
+                            "referencedDeclaration": 387,
                             "src": "2855:18:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
@@ -6105,7 +6105,7 @@
                               "name": "_msgSender",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 329,
+                              "referencedDeclaration": 324,
                               "src": "2875:10:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
@@ -6143,7 +6143,7 @@
                           "name": "hasRole",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 438,
+                          "referencedDeclaration": 433,
                           "src": "2847:7:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_bytes32_$_t_address_$returns$_t_bool_$",
@@ -6548,7 +6548,7 @@
                           "lValueRequested": false,
                           "memberName": "div",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 779,
+                          "referencedDeclaration": 774,
                           "src": "3533:10:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -6601,7 +6601,7 @@
                       "lValueRequested": false,
                       "memberName": "transfer",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1407,
+                      "referencedDeclaration": 1402,
                       "src": "3506:14:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -6671,7 +6671,7 @@
                           "lValueRequested": false,
                           "memberName": "div",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 779,
+                          "referencedDeclaration": 774,
                           "src": "3597:10:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -6720,7 +6720,7 @@
                       "lValueRequested": false,
                       "memberName": "sub",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 699,
+                      "referencedDeclaration": 694,
                       "src": "3586:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -6891,7 +6891,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.2",
-  "updatedAt": "2020-12-03T15:01:19.426Z",
+  "updatedAt": "2020-12-03T15:05:20.440Z",
   "devdoc": {
     "details": "ERC20 token with minting, burning and pausable token transfers.",
     "kind": "dev",
