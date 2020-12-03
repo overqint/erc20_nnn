@@ -3,7 +3,7 @@ const web3 = require('web3');
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 const { INFURA_PROJECT_ID,
-  TEST_PRIVATE_KEYS,
+  LOCAL_PRIVATE_KEYS,
   MAINNET_PRIVATE_KEYS,
   RINKEBY_PRIVATE_KEYS,
   ROPSTEN_PRIVATE_KEYS,
@@ -69,8 +69,7 @@ module.exports = {
     test: {
       provider: function () {
         return new HDWalletProvider({
-          privateKeys: TEST_PRIVATE_KEYS,
-          //mnemonic = "there large number cabin key actual army scare grid brass ritual ugly", 
+          privateKeys: LOCAL_PRIVATE_KEYS,
           providerOrUrl: "http://127.0.0.1:8545",
           addressIndex: 0,
           numberOfAddresses: 1
@@ -84,7 +83,7 @@ module.exports = {
         return new HDWalletProvider({
           privateKeys: ROPSTEN_PRIVATE_KEYS,
           providerOrUrl: "https://ropsten.infura.io/v3/" + INFURA_PROJECT_ID,
-          numberOfAddresses: 1,
+          numberOfAddresses: 2,
           derivationPath: "m/44'/60'/0'/0"
         })
       },
@@ -100,9 +99,9 @@ module.exports = {
           privateKeys: KOVAN_PRIVATE_KEYS,
           providerOrUrl: "https://kovan.infura.io/v3/" + INFURA_PROJECT_ID,
           addressIndex: 0,
-          numberOfAddresses: 3,
-          networkCheckTimeout: 10000
-          //derivationPath: "m/44'/60'/0'/0"
+          numberOfAddresses: 2,
+          networkCheckTimeout: 10000,
+          derivationPath: "m/44'/60'/0'/0"
         })
       },
       network_id: 42,
@@ -113,7 +112,7 @@ module.exports = {
         return new HDWalletProvider({
           privateKeys: RINKEBY_PRIVATE_KEYS,
           providerOrUrl: "https://rinkeby.infura.io/v3/" + INFURA_PROJECT_ID,
-          numberOfAddresses: 3,
+          numberOfAddresses: 2,
           derivationPath: "m/44'/60'/0'/0"
         })
       },
@@ -126,7 +125,7 @@ module.exports = {
         return new HDWalletProvider({
           privateKeys: MAINNET_PRIVATE_KEYS,
           providerOrUrl: "https://mainnet.infura.io/v3/" + INFURA_PROJECT_ID,
-          numberOfAddresses: 1,
+          numberOfAddresses: 2,
           derivationPath: "m/44'/60'/0'/0"
         })
       },

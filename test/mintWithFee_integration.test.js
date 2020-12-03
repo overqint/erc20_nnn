@@ -12,6 +12,8 @@ contract("NNNToken", async accounts => {
       [my_constants._t_c.TOKEN_NAME, my_constants._t_c.TOKEN_SYMBOL],
       { initializer: "__initialize", unsafeAllowCustomTypes: true });
     console.log('Deployed', this.nnnToken.address);
+    this.nnnToken.setMintingFeeAddress(accounts[1]);
+    this.nnnToken.setTransferFeeDivisor(2000);
   });
 
   it("mint coins and transfer with fee to account, fee should be collected", async function () {
@@ -26,7 +28,8 @@ contract("NNNToken", async accounts => {
     let accountBalance = (await this.nnnToken.balanceOf(accounts[4])).toString()
     assert.equal(accountBalance, transferAmount - (transferAmount / my_constants._t_c.FEE))
 
-    let feeCollectorAccountBalance = (await this.nnnToken.balanceOf(accounts[2])).toString()
+    mintingFeeAccount = (await this.nnnToken.feeAddress()).toString()
+    let feeCollectorAccountBalance = (await this.nnnToken.balanceOf(mintingFeeAccount)).toString()
     assert.equal(feeCollectorAccountBalance, transferAmount / my_constants._t_c.FEE)
 
   });

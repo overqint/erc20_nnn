@@ -11,6 +11,8 @@ contract('NNNToken (proxy)', async accounts => {
       [constants._t_c.TOKEN_NAME, constants._t_c.TOKEN_SYMBOL],
       { initializer: "__initialize", unsafeAllowCustomTypes: true });
     console.log('Deployed', this.nnnToken.address);
+    this.nnnToken.setMintingFeeAddress(accounts[1]);
+    this.nnnToken.setTransferFeeDivisor(2000);
     
     //remove contract deployer address from FEE_EXCLUDED_ROLE
     this.nnnToken.revokeRole(constants._t_c.FEE_EXCLUDED_ROLE, accounts[0])
@@ -27,7 +29,8 @@ contract('NNNToken (proxy)', async accounts => {
     let accountBalance = (await this.nnnToken.balanceOf(accounts[4])).toString()
     assert.equal(accountBalance, 10000000000000000000 - (transferAmount / constants._t_c.FEE))
 
-    let feeCollectorAccountBalance = (await this.nnnToken.balanceOf(accounts[2])).toString()
+    mintingFeeAccount = (await this.nnnToken.feeAddress()).toString()
+    let feeCollectorAccountBalance = (await this.nnnToken.balanceOf(mintingFeeAccount)).toString()
     assert.equal(feeCollectorAccountBalance, transferAmount / constants._t_c.FEE)
 
   });

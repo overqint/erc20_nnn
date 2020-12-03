@@ -35,8 +35,8 @@ contract EnhancedMinterPauser is
 
     function __EnhancedMinterPauser_init_unchained() internal initializer {
         _setupRole(FEE_EXCLUDED_ROLE, _msgSender());
-        setMintingFeeAddress(0xFEff5513B45A48D0De4f5e277eD22973a9389e0B);
-        setTransferFeeDivisor(2000);
+/*         setMintingFeeAddress(0x9D1Cb8509A7b60421aB28492ce05e06f52Ddf727);
+        setTransferFeeDivisor(2000); */
     }
 
     // minting process does not involve fees (by design)

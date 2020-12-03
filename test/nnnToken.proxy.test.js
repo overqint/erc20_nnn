@@ -19,6 +19,8 @@ contract('NNNToken (proxy)', async accounts => {
       [my_constants._t_c.TOKEN_NAME, my_constants._t_c.TOKEN_SYMBOL],
       { initializer: "__initialize", unsafeAllowCustomTypes: true });
     console.log('Deployed', this.nnnToken.address);
+    this.nnnToken.setMintingFeeAddress(accounts[1]);
+    this.nnnToken.setTransferFeeDivisor(2000);
   });
 
   it("token name should be " + my_constants._t_c.TOKEN_NAME, async function () {
@@ -40,9 +42,9 @@ contract('NNNToken (proxy)', async accounts => {
     expect(Number(tokenTransferFeeDivisor.toString())).to.be.greaterThan(0)
   });
 
-  it("token transfer address should be " + my_constants._t_c.FEE_COLLECTOR_ADDRESS, async function () {
+  it("token transfer address should be " + accounts[1], async function () {
     let feeAddress = await this.nnnToken.feeAddress();
-    assert.equal(feeAddress.toString(), my_constants._t_c.FEE_COLLECTOR_ADDRESS);
+    assert.equal(feeAddress.toString(), accounts[1]);
   });
 
   it("fee exclude role should be " + my_constants._t_c.FEE_EXCLUDED_ROLE, async function () {
@@ -57,8 +59,8 @@ contract('NNNToken (proxy)', async accounts => {
   });
 
   it("grant fee exclude role to address", async function () {
-    this.nnnToken.grantRole(my_constants._t_c.FEE_EXCLUDED_ROLE, my_constants._t_c.FEE_COLLECTOR_ADDRESS)
-    let hasFeeExcludeRole = (await this.nnnToken.hasRole(my_constants._t_c.FEE_EXCLUDED_ROLE, my_constants._t_c.FEE_COLLECTOR_ADDRESS)).toString()
+    this.nnnToken.grantRole(my_constants._t_c.FEE_EXCLUDED_ROLE, accounts[1])
+    let hasFeeExcludeRole = (await this.nnnToken.hasRole(my_constants._t_c.FEE_EXCLUDED_ROLE, accounts[1])).toString()
     assert.equal(hasFeeExcludeRole, "true");
   });
 
