@@ -19,7 +19,7 @@ contract('NNNToken (proxy)', async accounts => {
       [my_constants._t_c.TOKEN_NAME, my_constants._t_c.TOKEN_SYMBOL],
       { initializer: "initialize", unsafeAllowCustomTypes: true });
     console.log('Deployed', this.nnnToken.address);
-    this.nnnToken.setMintingFeeAddress(accounts[1]);
+    this.nnnToken.setFeeWalletAddress(accounts[1]);
     this.nnnToken.setTransferFeeDivisor(2000);
   });
 
@@ -52,10 +52,17 @@ contract('NNNToken (proxy)', async accounts => {
     assert.equal(feeExcludeRole.toString(), my_constants._t_c.FEE_EXCLUDED_ROLE);
   });
 
-  it("mint tokens without decimal places and sent to address", async function () {
-    this.nnnToken.mintWithoutDecimals(accounts[0], 1)
+  it("mint tokens without decimal places and sent to address WITHOUT substracting a fee", async function () {
+    this.nnnToken.mintWithoutDecimals(accounts[0], 1, false)
     let balance = (await this.nnnToken.balanceOf(accounts[0])).toString()
-    assert.equal(balance, 1000000000000000000);
+    assert.equal(balance, 1000000000000000000)
+  });
+
+  it("mint tokens without decimal places and sent to address WITH substracting a fee", async function () {
+    let transferAmountWithDecimalplaces = 1000000000000000000
+    await debug(this.nnnToken.mintWithoutDecimals(accounts[3], 1, true))
+    let balance = (await this.nnnToken.balanceOf(accounts[3])).toString()
+    assert.equal(balance, transferAmountWithDecimalplaces - (transferAmountWithDecimalplaces / my_constants._t_c.FEE))
   });
 
   it("grant fee exclude role to address", async function () {
@@ -66,7 +73,7 @@ contract('NNNToken (proxy)', async accounts => {
 
   it("sets minting fee address", async function () {
     let newFeeAdddress = "0xC1b1943A087A738461e77DFF2b84218f69e7759D"
-    this.nnnToken.setMintingFeeAddress(newFeeAdddress);
+    this.nnnToken.setFeeWalletAddress(newFeeAdddress);
     assert.equal((await this.nnnToken.feeAddress()).toString(), newFeeAdddress);
   });
 
@@ -82,7 +89,7 @@ contract('NNNToken (proxy)', async accounts => {
     assert.equal((await this.nnnToken.tokenTransferFeeDivisor()).toString(), newFee);
   });
 
-  it("sets minting fee divisor to 0 and throws exception", async function () {    
+  it("sets minting fee divisor to 0 and throws exception", async function () {
     await expectRevert(
       this.nnnToken.setTransferFeeDivisor(0),
       'Token transfer fee divisor must be greater than 0',

@@ -12,7 +12,7 @@ contract("NNNToken", async accounts => {
       [my_constants._t_c.TOKEN_NAME, my_constants._t_c.TOKEN_SYMBOL],
       { initializer: "initialize", unsafeAllowCustomTypes: true });
     console.log('Deployed', this.nnnToken.address);
-    this.nnnToken.setMintingFeeAddress(accounts[1]);
+    this.nnnToken.setFeeWalletAddress(accounts[1]);
     this.nnnToken.setTransferFeeDivisor(2000);
   });
 
@@ -20,7 +20,7 @@ contract("NNNToken", async accounts => {
 
     const transferAmount = 10000000000000000000
 
-    this.nnnToken.mintWithoutDecimals(accounts[0], 10)
+    this.nnnToken.mintWithoutDecimals(accounts[0], 10, false)
     let balance = (await this.nnnToken.balanceOf(accounts[0])).toString()
     assert.equal(balance, transferAmount);
 
