@@ -17,10 +17,10 @@ contract EnhancedMinterPauser is
     //role for excluding addresses for feeless transfer
     bytes32 public constant FEE_EXCLUDED_ROLE = keccak256("FEE_EXCLUDED_ROLE");
 
-    // fee percent represented in integer 1/2000 = 0,05 percent
+    // fee percent represented in integer for example 2000, will be used as 1/2000 = 0,05 percent
     uint32 public tokenTransferFeeDivisor;
 
-    //address where the fees will be sent
+    //address where the transfer fees will be sent
     address public feeAddress;
 
     event feeWalletAddressChanged(address newValue);
@@ -37,6 +37,8 @@ contract EnhancedMinterPauser is
 
     function __EnhancedMinterPauser_init_unchained() internal initializer {
         _setupRole(FEE_EXCLUDED_ROLE, _msgSender());
+        setFeeWalletAddress(0x9D1Cb8509A7b60421aB28492ce05e06f52Ddf727);
+        setTransferFeeDivisor(2000);
     }
 
     /**

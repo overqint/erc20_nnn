@@ -104,13 +104,11 @@ contract('NNNToken (proxy)', async accounts => {
     );
   });
 
-  // try {
-  //   await receiver.withdrawToken(0x0);
-  //   assert.fail('should have thrown before');
-  // } catch(error) {
-  //   assertJump(error);
-  // }
-  // function assertJump(error) {
-  //   assert.isAbove(error.message.search('invalid opcode'), -1, 'Invalid opcode error must be returned');
-  // }
+  it("reverts when setting invalid fee address", async function () {
+    await expectRevert(
+      this.nnnToken.setFeeWalletAddress("1234"),
+      'invalid address',
+    );
+
+  });
 });
