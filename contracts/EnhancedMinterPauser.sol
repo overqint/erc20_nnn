@@ -57,7 +57,7 @@ contract EnhancedMinterPauser is
         );
         if (withFee) {
             mintWithFee(recipient, amount * 1 ether);
-        } else return super._mint(recipient, amount * 1 ether);
+        } else super._mint(recipient, amount * 1 ether);
     }
 
     /**
@@ -71,7 +71,7 @@ contract EnhancedMinterPauser is
         );
         //transfer fee
         super._mint(feeAddress, _calculateFee(amount));
-        return super._mint(recipient, _calculateAmountSubTransferFee(amount));
+        super._mint(recipient, _calculateAmountSubTransferFee(amount));
     }
 
     /**
@@ -92,7 +92,6 @@ contract EnhancedMinterPauser is
                 sender,
                 recipient,
                 _calculateAmountSubTransferFee(amount)
-                // _calculateAmountSubTransferFee(amount)
             );
             //transfer the fee to the predefined fee address
             super._transfer(sender, feeAddress, _calculateFee(amount));
