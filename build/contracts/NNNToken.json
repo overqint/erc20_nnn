@@ -189,7 +189,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -202,7 +203,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -215,7 +217,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -228,7 +231,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -252,7 +256,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -295,7 +300,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -339,7 +345,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -376,7 +383,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -395,7 +403,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -419,7 +428,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -438,7 +448,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -480,7 +491,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -576,7 +588,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -596,7 +609,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -671,7 +685,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -684,7 +699,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -697,7 +713,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -1848,8 +1865,8 @@
         }
       },
       "links": {},
-      "address": "0x8734fF0005f5953cEeb108AD86732F03A836456F",
-      "transactionHash": "0xa1ec3667cc573506a926befedec7a0bf78a227dd6e2c71cd99a3c4669818f1cf"
+      "address": "0xfAbBA7C6f44a9f71cF24c13DbD64AB2E762a897C",
+      "transactionHash": "0x347d1c7d641bcba03ffb37978ed20beb170def36dc6ac7a4f380457aa8214108"
     },
     "42": {
       "events": {
@@ -2216,11 +2233,12 @@
         }
       },
       "links": {},
-      "address": "0xb217b382895C9C4DeB2b5fD43e41b541e2D7d0FF"
+      "address": "0xe3264fE460f4Ff9205C5D65E1269323851A6d60e"
     }
   },
   "schemaVersion": "3.3.2",
-  "updatedAt": "2020-12-10T22:35:29.946Z",
+  "updatedAt": "2020-12-10T22:52:35.054Z",
+  "networkType": "ethereum",
   "devdoc": {
     "details": "this contract is a Pausable ERC20 token with Burn and Mint functions. By implementing EnhancedMinterPauser this contract also includes external methods for setting a new implementation contract for the Proxy. NOTE: All calls to this contract should be made through the proxy, including admin actions. Any call to transfer against this contract should fail.",
     "kind": "dev",
