@@ -6,8 +6,6 @@ The 999.9 token (NNN) is asset-backed by LBMA certified gold. 100 NNN constitute
 
 Upgradable ERC20 Contract
 
-Code Architecture inspiration from https://github.com/PresearchOfficial/PRE-Token
-
 Using OpenZeppelin contracts.
 
 ### Deploying Proxy
