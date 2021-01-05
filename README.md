@@ -4,14 +4,16 @@ The 999.9 token (NNN) is asset-backed by LBMA certified gold. 100 NNN constitute
 
 ## Audit
 
-Thanks for Red4Sec Team
+The NNN Token smart contract was audited by Red4Sec. All aspects related to the ERC20 standard compatibility and other known ERC20 pitfalls/vulnerabilities were checked, and no issues were found in these areas. Red4Sec also examined other areas such as coding practices and business logic. Issues reported by Red4Sec were fixed prior to deploying the NNN Token smart contract.
+
+Thanks to Red4Sec for their lightning fast auditing service and great support.
 ## Technical Information
 
 Upgradable ERC20 Contract
 
 Using OpenZeppelin contracts.
 
-Thanks for the outstanding work that openzeppelin puts into it's contract and the great and near instant support from their team.
+Thanks for the outstanding work that openzeppelin puts into it's contract and the great and instant support from their team.
 
 ### Deploying Proxy
 
