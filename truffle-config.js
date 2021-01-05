@@ -7,7 +7,8 @@ const { INFURA_PROJECT_ID,
   MAINNET_PRIVATE_KEYS,
   RINKEBY_PRIVATE_KEYS,
   ROPSTEN_PRIVATE_KEYS,
-  KOVAN_PRIVATE_KEYS } = require('./.secrets.json');
+  KOVAN_PRIVATE_KEYS,
+  ETHERSCAN_API_KEY } = require('./.secrets.json');
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -125,11 +126,12 @@ module.exports = {
         return new HDWalletProvider({
           privateKeys: MAINNET_PRIVATE_KEYS,
           providerOrUrl: "https://mainnet.infura.io/v3/" + INFURA_PROJECT_ID,
-          numberOfAddresses: 2,
+          numberOfAddresses: 1,
           derivationPath: "m/44'/60'/0'/0"
         })
       },
       network_id: 1,
+      gas: 800000,
       gasPrice: web3.utils.toWei("20", "gwei"),
       skipDryRun: false
     },
@@ -179,6 +181,9 @@ module.exports = {
     }
   },
   plugins: [
-    'truffle-flatten'
-  ]
+    'truffle-plugin-verify'
+  ],
+  api_keys: {
+    etherscan: ETHERSCAN_API_KEY
+  }
 };

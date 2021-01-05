@@ -2,11 +2,16 @@
 
 The 999.9 token (NNN) is asset-backed by LBMA certified gold. 100 NNN constitute 1g of gold. The token allows tokenholders to exchange it for physical gold
 
+## Audit
+
+Thanks for Red4Sec Team
 ## Technical Information
 
 Upgradable ERC20 Contract
 
 Using OpenZeppelin contracts.
+
+Thanks for the outstanding work that openzeppelin puts into it's contract and the great and near instant support from their team.
 
 ### Deploying Proxy
 
