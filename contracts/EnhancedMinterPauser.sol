@@ -122,7 +122,7 @@ contract EnhancedMinterPauser is
         );
         require(
             _tokenTransferFeeDivisor > 2,
-            "Token transfer fee divisor must be greater than 0"
+            "Token transfer fee divisor must be greater than 2"
         );
 
         tokenTransferFeeDivisor = _tokenTransferFeeDivisor;
